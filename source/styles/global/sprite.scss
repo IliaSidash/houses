@@ -1,0 +1,134 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$acces-name: 'acces';
+$acces-x: 36px;
+$acces-y: 224px;
+$acces-offset-x: -36px;
+$acces-offset-y: -224px;
+$acces-width: 38px;
+$acces-height: 34px;
+$acces-total-width: 414px;
+$acces-total-height: 262px;
+$acces-image: '../images/sprite.png';
+$acces: (36px, 224px, -36px, -224px, 38px, 34px, 414px, 262px, '../images/sprite.png', 'acces', );
+$google-name: 'google';
+$google-x: 209px;
+$google-y: 0px;
+$google-offset-x: -209px;
+$google-offset-y: 0px;
+$google-width: 205px;
+$google-height: 213px;
+$google-total-width: 414px;
+$google-total-height: 262px;
+$google-image: '../images/sprite.png';
+$google: (209px, 0px, -209px, 0px, 205px, 213px, 414px, 262px, '../images/sprite.png', 'google', );
+$star-name: 'star';
+$star-x: 74px;
+$star-y: 224px;
+$star-offset-x: -74px;
+$star-offset-y: -224px;
+$star-width: 36px;
+$star-height: 34px;
+$star-total-width: 414px;
+$star-total-height: 262px;
+$star-image: '../images/sprite.png';
+$star: (74px, 224px, -74px, -224px, 36px, 34px, 414px, 262px, '../images/sprite.png', 'star', );
+$tasks-name: 'tasks';
+$tasks-x: 0px;
+$tasks-y: 224px;
+$tasks-offset-x: 0px;
+$tasks-offset-y: -224px;
+$tasks-width: 36px;
+$tasks-height: 38px;
+$tasks-total-width: 414px;
+$tasks-total-height: 262px;
+$tasks-image: '../images/sprite.png';
+$tasks: (0px, 224px, 0px, -224px, 36px, 38px, 414px, 262px, '../images/sprite.png', 'tasks', );
+$yandex-name: 'yandex';
+$yandex-x: 0px;
+$yandex-y: 0px;
+$yandex-offset-x: 0px;
+$yandex-offset-y: 0px;
+$yandex-width: 209px;
+$yandex-height: 224px;
+$yandex-total-width: 414px;
+$yandex-total-height: 262px;
+$yandex-image: '../images/sprite.png';
+$yandex: (0px, 0px, 0px, 0px, 209px, 224px, 414px, 262px, '../images/sprite.png', 'yandex', );
+$spritesheet-width: 414px;
+$spritesheet-height: 262px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($acces, $google, $star, $tasks, $yandex, );
+$spritesheet: (414px, 262px, '../images/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
