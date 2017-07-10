@@ -7,7 +7,7 @@
   "license": "ISC",
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "normalise.scss": "^1.0.1",
+    "normalise.scss": "^1.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.18.12",
