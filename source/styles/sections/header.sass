@@ -1,0 +1,81 @@
+.header
+  background: url('../images/header-bg.jpeg') center top/cover no-repeat
+  color: $colorWhite
+  padding: 32px 0 120px
+
+  &__title
+    @include col(8)
+    text-align: center
+    margin: 176px auto 56px
+    font-family: $extarbold
+    @include rem(58px)
+    text-transform: uppercase
+    letter-spacing: 5px
+
+
+
+.logo
+  background: url('../images/logo.png')
+  width: 170px
+  height: 62px
+  display: inline-block
+
+
+.nav
+  @include col(8)
+  display: inline-block
+  vertical-align: top
+  text-align: center
+  line-height: 62px
+
+  &__link
+    color: $colorWhite
+    font-family: $extarbold
+    font-size: 13px
+    text-transform: uppercase
+    margin: 13px 30px 13px 0
+    padding: 13px 0
+
+    &:last-child
+      margin-right: 0px
+
+
+    &:hover
+      color: $colorOrange
+      border-top: 1px solid $colorOrange
+      border-bottom: 1px solid $colorOrange
+
+
+
+
+
+.call
+  @include col(2)
+  text-align: right
+  display: inline-block
+
+  &__number
+    @include rem(17px)
+    font-family: $extarbold
+
+
+  &__btn
+    display: inline-block
+    font-family: $regular
+    font-weight: bold
+    @include rem(11px)
+    background: none
+    padding: 9px 14px
+    border: 1px solid #fff
+    color: #fff
+    margin-top: 11px
+    border-radius: 3px
+
+    i
+      margin-right: 10px
+
+
+
+
+.buttons
+  text-align: center

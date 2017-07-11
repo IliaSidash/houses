@@ -1,0 +1,66 @@
+.technology
+  padding: 94px 0 0 0
+  &__description
+    display: inline-block
+    @include rem(15px)
+    @include col(6)
+    margin-top: 22px
+    line-height: 1.6
+    position: relative
+    &:after
+      content: ''
+      @include sprite($ax)
+      position: absolute
+      top: -175px
+      right: -665px
+
+.tabs
+  margin-top: 85px
+  &-bg
+    background: #e9edee
+    padding-bottom: 49px
+  &__link
+    display: inline-block
+    text-align: center
+    width: 196px
+    @include rem(20px)
+    font-family: $extarbold
+    text-transform: uppercase
+    line-height: 2.35
+    position: relative
+    color: #605462
+    border-bottom: 2px solid #605462
+    margin-right: -4px
+    cursor: pointer
+    &_active
+      color: #000
+      border-bottom: 2px solid #000
+
+.tabs-item
+  display: none
+  &-left
+    display: inline-block
+    @include col(7)
+
+    &__description
+      @include rem(14px)
+      color: #4a3e4d
+      padding: 45px 0 42px
+      line-height: 23px
+  &_active
+    display: block
+  &-right
+    @include col(5)
+    display: inline-block
+    vertical-align: top
+    text-align: right
+
+.tabs-list
+  padding-bottom: 20px
+  &__item
+    @include col(6)
+    display: inline-block
+    color: #582c60
+    padding-bottom: 20px
+    span
+      margin-left: 10px
