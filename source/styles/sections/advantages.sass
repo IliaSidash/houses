@@ -1,26 +1,24 @@
-.pixel1
-  font-size: 14px
-
-
-.pixel2
-  font-size: 16px
-
-.pixel3
-  font-size: 18px
-
-.pixel4
-  font-size: 62px
-
-
-.rem
-  &_1
-    @include rem(14px)
-
-  &_2
-    @include rem(16px)
-
-  &_3
-    @include rem(18px)
-
-  &_4
-    @include rem(62px)
+.advantages
+  padding: 105px 0
+  &-container
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &-item
+    @include col(4)
+    &__img
+      float: left
+      &_icon1
+        @include sprite($icon1)
+      &_icon2
+        @include sprite($icon2)
+      &_icon3
+        @include sprite($icon3)
+      &_icon4
+        @include sprite($icon4)
+      &_icon5
+        @include sprite($icon5)
+      &_icon6
+        @include sprite($icon6)
+    &-text
+      
