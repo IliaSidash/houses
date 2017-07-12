@@ -6,8 +6,11 @@
     flex-wrap: wrap
   &-item
     @include col(4)
+    margin-top: 56px
+
     &__img
       float: left
+      margin-right: 30px
       &_icon1
         @include sprite($icon1)
       &_icon2
@@ -21,4 +24,9 @@
       &_icon6
         @include sprite($icon6)
     &-text
-      
+      &__title
+        @include rem(21px)
+        font-family: $extrabold
+        margin: 0 0 20px
+      &__description
+        line-height: 1.429
