@@ -1,0 +1,37 @@
+.projects
+  padding: 102px 0 82px
+  &-container
+    margin-top: 60px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  &-item
+    background: url("../images/project-bg.jpeg") bottom no-repeat
+    @include col(4)
+    border-radius: 3px
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21)
+    padding-bottom: 30px
+    margin-bottom: 32px
+    &__img
+      width: 100% 
+    &__title
+      margin: 32px 0 17px 37px
+      @include rem(19px)
+      font-family: $extrabold
+      letter-spacing: 2px
+      text-transform: uppercase
+    &__description
+      font-family: $light
+      margin-left: 37px
+    &__price
+      @include rem(15px)
+      font-family: $extrabold
+      color: $colorPurple
+      margin: 57px 0 17px 37px
+    &__btn
+      margin-left: 37px
+      padding: 22px 24px 22px 34px
+      &:hover
+        padding: 22px 24px 22px 34px
+        background: lighten($colorOrange, 7%)
+        border: none
